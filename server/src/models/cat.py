@@ -2,7 +2,7 @@ from flask import g
 from db import Db
 
 
-class Cat():
+class Cat:
     def sanitize(self, cats):
         if not isinstance(cats, (list, tuple)):
             cats = [cats]

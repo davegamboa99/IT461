@@ -90,7 +90,7 @@ def cat(cat_id):
     cat_object = Cat()
     cat = cat_object.get({"id": cat_id})
     if cat is None:
-        return make_response(jsonify({"error": "Cat id not found."}), 404)
+        return make_response(jsonify({"error": "cat id not found."}), 404)
     if str(request.method).upper() == "PUT":
         cat_data = request.json
         cat_data["id"] = cat_id
