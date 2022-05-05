@@ -8,6 +8,7 @@ bp_dogs = Blueprint("dogs", __name__, url_prefix="/v1/dogs")
 DogRouter.handler(bp_dogs)
 app.register_blueprint(bp_dogs)
 
+
 bp_cats = Blueprint("cats", __name__, url_prefix="/v1/cats")
 CatRouter.handler(bp_cats)
 app.register_blueprint(bp_cats)
