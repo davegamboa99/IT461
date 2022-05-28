@@ -1,7 +1,6 @@
 from flask import jsonify, request, current_app
 import jwt
 import datetime
-from v1.user.model import UserModel
 
 def jwt_token_required():
     token = request.args.get('token')

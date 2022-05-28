@@ -15,6 +15,7 @@ import useAxiosPrivate from './hooks/useAxiosPrivate';
 import DogAdd from './components/DogAdd';
 import DogDetail from './components/DogDetail';
 import DogEdit from './components/DogEdit';
+import DeleteDog from './components/DeleteDog';
 
 const ROLES = {
   'User': 2001,
@@ -81,6 +82,7 @@ function App() {
           <Route path="dogs/create" element={<DogAdd addHandler={dogAddHandler} />} />
           <Route path="dogs/view/:id" element={<DogDetail />} />
           <Route path="dogs/edit/:id" element={<DogEdit updateHandler={dogUpdateHandler} />} />
+          <Route path="dogs/:id" element={<DeleteDog />} />
         </Route>
 
 

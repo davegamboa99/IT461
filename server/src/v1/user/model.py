@@ -1,7 +1,6 @@
 from db import Db
 
-
-class UserModel:
+class UserModel():
     def sanitize(self, users):
         if not isinstance(users, (list, tuple)):
             users = [users]
@@ -46,11 +45,7 @@ class UserModel:
                 user = db.fetchone(sql, filters["id"])
                 return user
             if "username" in filters and "password" in filters:
-                sql = (
-                    "SELECT "
-                    + ",".join(fields)
-                    + " FROM users WHERE username = %s AND password = %s"
-                )
+                sql = "SELECT " + ",".join(fields) + " FROM users WHERE username = %s AND password = %s"
                 user = db.fetchone(sql, [filters["username"], filters["password"]])
                 return user
 
@@ -58,7 +53,8 @@ class UserModel:
                 offset = int(filters["offset"])
             if "limit" in filters:
                 limit = int(filters["limit"])
-
+        
+        
         cols = "COUNT(*) AS total" if count_only else ",".join(fields)
         sql = "SELECT " + cols + " FROM users"
         if not count_only:
